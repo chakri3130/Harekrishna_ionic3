@@ -1,0 +1,81 @@
+<ion-menu [content]="content">
+  <ion-header>
+    
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <img src="assets/imgs/SideMenuPic.png" (click)="homepage()" menuClose>
+      <!-- <ion-item class="list_item">
+        <img src="assets/imgs/dailydarshan.png">
+      <label>Daily Darshan</label>
+      <ion-icon name="arrow-forward"></ion-icon>
+      </ion-item>
+    
+    <ion-item class="list_item" menuClose>
+        <img src="assets/imgs/media.png">
+      <label>Media</label>
+      <ion-icon name="arrow-forward"></ion-icon>
+      </ion-item>
+      <ion-item class="list_item" menuClose>
+          <ion-icon name="md-calendar" style="float:left;width:30px;font-size:2.2rem !important;font-size: 3.7rem !important;
+          margin-top: -5px;"></ion-icon>
+        <label>Vaishnava Calender</label>
+        <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item class="list_item" menuClose (click)="japa()"> 
+            <img src="assets/imgs/mantrajapa.png">
+          <label>Mahamantra Japa</label>
+          <ion-icon name="arrow-forward"></ion-icon>
+          </ion-item>
+          <ion-item class="list_item" menuClose (click)="blog()">
+              <img src="assets/imgs/blog.png">
+            <label>Blog</label>
+            <ion-icon name="arrow-forward"></ion-icon>
+            </ion-item>
+            <ion-item class="list_item" (click)="contactus()" menuClose>
+                <img src="assets/imgs/contactus.png">
+              <label>Contact Us</label>
+              <ion-icon name="arrow-forward"></ion-icon>
+              </ion-item> -->
+              <ion-list class="accordion-list">
+                  <!-- First Level -->
+                  <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+                    <!-- Toggle Button -->
+                    
+                    <ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+                        <img src="{{item.image}}" style="width:30px;margin-top:6px;">
+                      <ion-icon item-right name="arrow-forward" *ngIf="!item.open"></ion-icon>
+                      <ion-icon item-right name="arrow-down" *ngIf="item.open"></ion-icon>
+                      
+                        {{ item.name }}
+                    </ion-item>
+               
+                    <ion-list *ngIf="item.children && item.open" no-lines>
+                      <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+                         
+                        <button ion-item (click)="toggleItem(i, j)" *ngIf="child.children" class="child" detail-none >
+                            <!-- <ion-icon item-right name="arrow-forward" *ngIf="!item.open"></ion-icon> -->
+                            <!-- <ion-icon item-right name="arrow-down" *ngIf="item.open"></ion-icon> -->
+                          {{ child.name }}
+                        </button>
+                        <ion-item *ngIf="!child.children" ion-item detail-none class="child-item" text-wrap>
+                            <!-- <ion-icon item-right name="arrow-forward" *ngIf="!item.open"></ion-icon> -->
+                            <!-- <ion-icon item-right name="arrow-down" *ngIf="item.open"></ion-icon> -->
+                          <h2>{{ child.name }}</h2>
+                          <!-- <ion-icon item-right name="arrow-forward" *ngIf="!item.open"></ion-icon> -->
+                        </ion-item>
+               
+                      </ion-list-header>
+                     
+                    </ion-list>
+                    
+                  </ion-list-header>
+                </ion-list>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav #nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

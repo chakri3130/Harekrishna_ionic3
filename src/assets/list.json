@@ -1,0 +1,55 @@
+{
+    "items": [
+        {
+            "name": "Daily Darshan",
+            "image": "assets/imgs/dailydarshan.png",
+            "children": [
+                {
+                    "name": "Live Video"
+                },
+                {
+                    "name": "Divine Saying"
+                },
+                {
+                    "name": "Picture of the Day"
+                },
+                {
+                    "name": "Divine Saying"
+                }
+            ]
+        },
+        {
+            "name": "Media",
+            "image":"assets/imgs/media.png",
+            "children": [
+                {
+                    "name": "Audio"
+                },
+                {
+                    "name": "Video"
+                },
+                {
+                    "name": "Publications"
+                }
+            ]
+        },
+        {
+            "name": "Vaishnava Calander",
+            "image": "assets/imgs/calender.png"
+           
+        },
+        {
+            "name":"Mahamantra Japa",
+            "image": "assets/imgs/mantrajapa.png"
+        },
+        {
+            "name":"Blog",
+            "image":"assets/imgs/blog.png"
+        },
+        {
+            "name":"Contact Us",
+            "image":"assets/imgs/contactus.png"
+        }
+        
+    ]
+}

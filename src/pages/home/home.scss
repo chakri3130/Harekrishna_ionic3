@@ -1,0 +1,53 @@
+page-home {
+    .scroll-content
+    {
+        overflow-y: hidden;
+    }
+    .landing
+    {
+        height: 100%;
+        width: 100%;
+        display: block;
+        left: 0;
+        right: 0;
+        position: relative;
+    }
+    .toolbar-background
+    {
+        background:#F5B041;
+    }
+    .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default
+    {
+        color: white !important;
+    }
+    .bar-button-menutoggle-md ion-icon
+    {
+        color: white !important;
+    }
+    
+    .search
+    {
+        position: absolute;
+        z-index: 1;
+        background-color: #F5B041;
+        border-radius: 60%;
+        margin-left: 87%;
+        margin-top: 10px;
+        height: 27px;
+        width: 28px;
+    }
+    .bell
+    {
+        margin-left: 75%;
+        position: absolute;
+        z-index: 1;
+        background-color: #F5B041;  
+        border-radius: 50%;
+        margin-top: 10px;
+        width: 30px;
+        height: 28px;
+    }
+    
+   
+
+}
